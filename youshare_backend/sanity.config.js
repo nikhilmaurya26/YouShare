@@ -1,8 +1,14 @@
-import {defineConfig} from 'sanity'
-import {deskTool} from 'sanity/desk'
-import {visionTool} from '@sanity/vision'
-import {schemaTypes} from './schemas'
+import { defineConfig } from 'sanity'
+import { deskTool } from 'sanity/desk'
+import { visionTool } from '@sanity/vision'
+import { schemaTypes } from './schemas'
 import user from './schemas/user'
+import save from './schemas/save'
+import pin from './schemas/pin'
+import comment from './schemas/comment'
+import postedBy from './schemas/postedBy'
+
+
 
 export default defineConfig({
   name: 'default',
@@ -14,6 +20,6 @@ export default defineConfig({
   plugins: [deskTool(), visionTool()],
 
   schema: {
-    types: [...schemaTypes,user]
+    types: [...schemaTypes, user, pin, comment, postedBy,save]
   },
 })
